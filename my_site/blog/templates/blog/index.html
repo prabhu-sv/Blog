@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %} Blog {% endblock %}
+{%block css_files%}
+<link rel="stylesheet" href="{% static "post.css" %}">
+<link rel="stylesheet" href="{%static "style.css"%}">
+
+{%endblock%}
+
+{% block content %} 
+    
+
+    <section id="welcome">
+        <header>
+            <img src="{% static "images/image1.webp" %}" alt="Prabhu Author of this blog">
+            <h2>Prabhu's BLOG</h2>
+        </header>
+        <p>hai im Prabhu</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>My latest thoughts</h2>
+        <ul>
+            {% for post in posts %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section id="about">
+        <h2>what i do</h2>
+        <p>i love watching movies</p>
+        
+    </section>
+{% endblock %}
